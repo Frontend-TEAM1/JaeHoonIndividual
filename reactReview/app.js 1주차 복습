@@ -1,0 +1,34 @@
+//App.js 복습
+//파일 경로: todomaster>todolist>src>app.js
+
+//reutrn에서 입력시 선택하면 자동 import됨.
+import {BrowserRouter, Routes,Route} from'react-router-dom';
+import { HomePage } from './pages/Home';
+import { TodoPage } from './pages/Todo';
+/*
+참고 
+{} 안은 키값으로 가져오기 때문에 함수명을 그대로 쓰고 디폴트는 어차피 디폴트 함수를 가져오기 때문에 함수명을 내맘대로 써도 된다
+*/
+function App() {
+/*
+Parsing error:JSX elements must be wrapped in an enclosing tag.
+에러 방지를 위해 태그로 감싸줘야함! 
+==>컴포넌트는 다른 태그로 감싸줘야 연달아서 사용가능.
+함수 앞에 첫글자는 대문자로!
+<React.Fragment> = <> </>
+ */
+  return(
+    <BrowserRouter>
+    {/*HTML5를 지원하는 브라우저 주소를 감지*/}
+      <Routes>
+        {/*Route path와 감지한 주소가 일치한 router만을 랜더링 시켜주는 역할 */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/todo" element={<TodoPage />} />
+
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+//
