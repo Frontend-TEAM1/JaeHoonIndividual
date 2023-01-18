@@ -1,0 +1,91 @@
+------------------------------1주차-------------------------------------------
+React :
+ 복잡한 UI를 쉽게 구축하기 윙해 페이스북에서 제작한 라이브러리
+ *라이브러리: 서비스환경에 따라 사용자가 선택.
+ 
+>>React JS의 구동원리 핵심 컨셉
+
+Components
+-하나의 페이지를 한 가지 이상의 기능을 수행하는 UI단위로 분리한 것
+-재사용이 용이하고 관리 및 유지 보수에 효율적
+
+Virtual DOM
+-react가 가지고 있는 가상 돔, 돔의 복사본.
+-state(상태)를 react에서 구독, 만약 state의 변화가 생긴다면 그 때
+ 가상돔과 실제돔을 비교하여 수정된 부분만을 실제돔에 리랜더링
+
+ 1. state의 변화가 생긴다면
+ 2. 수정된 부분(컴포넌트)만을 실제 돔에 리랜더링
+    (랜더링 최적화...변화된 부분만 랜더링하므로 더 빠르게 보여줌)
+
+key point 
+state(상태)
+Components(UI 분리)
+Virtual DOM(re 랜더링) 
+
+>>패키지 관리 툴
+npm i(install) 라이브러리명(--save) -설치
+      npm rm(remove) 라이브러리명 -삭제
+
+      npm i -g 라이브러리명 (노드 환경 전역에서 설치)
+      npm i -D 라이브러리명 (개발환경에서만 사용할 라이브러리를 설치)
+      npx create-react-app 프로젝트 명: react 프로젝트를 생성하는 명령어
+      
+>> React 생성법
+1. 터미널 명령어를 통해 내가 프로젝트를 생성하고자 하는 위치 경로를 
+ 맞춰야함
+  ex) cd todomaster
+      cd todolist
+2. 명령어
+create-react-app
+
+3.npx create-react-app 프로젝트명
+   *폴더 경로 꼭 확인
+   (프로젝트 실행 시 기본주소는 http://localhost:3000/)
+ 
+>>React 구조
+
+1)프로젝트 구조
+
+node_modules :현재 프로젝트에 설치된 라이브러리들의 실제 파일
+               용량이 높은편 그래서 git에는 올리지 않는다.
+               
+public - 정적 파일 보관소 (index.html, favicon,seo)
+
+gitigonore: git에 올라가지 말아야할 파일.
+
+package.json : 설치된 라이브러리의 목록과 버전을 관리,
+    실행 스크립트(명령어)와 프로젝트 설정
+
+package-lock.json: maven과 비슷한 역할 .열어볼 많이 없음
+  라이브러리 설치 시 , 라이브러리 설치에 필요한 정확한 정보.
+  
+2)src 구조
+실제 개발 폴더-src
+**src :개발이 진행될 곳
+
+
+  App.css --app.js에 참조되어있는 기본 css파일
+          --index.js app.js는 react구조상 index.html을 제외한
+          최상위 컴포넌트
+          app.css는 모든 컴포넌트에 적용
+
+          그러나, react에서 가장 많이 사용하는 것은 일반적인 css가 아닌
+          js안에 css를 작성할 수 있는 css-in-js를 활용
+          따라서 삭제해줘도 무방.
+          -> css-in-js에 전역스타일링 기능이 따로 탑재
+          
+ App.js --routing(주소 설정),라이브러리의 provider(설정)
+ 
+ App.tst.js --test코드의 샘플
+
+ index.css --app.css와 동일
+
+ index.js --최상위 컴포넌트의 index.html의 root에 app.js를 전달(랜더링)
+
+ reportWebvitals.js --프론트엔드 성능 체크x (라이트하우스 체크)
+  더 좋은 체크방법들이 있어서 잘 사용안함.
+
+ setupTests.js --testcode 라이브러리 전역 참조 설정
+  테스트 코드 임포트
+  --------------------------------------------------------------------------------------
