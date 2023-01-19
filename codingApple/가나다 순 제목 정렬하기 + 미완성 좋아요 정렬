@@ -1,0 +1,98 @@
+import logo from './logo.svg';
+import './App.css';
+import {useState} from 'react';
+
+
+
+function App() {
+  //function첫글자는 대문자로
+
+  let post ='강남 우동 맛집';
+  let [글제목, changeTitle]=useState( ['남자 코트 추천','강남 우동 맛집','파이썬 독학']);
+  
+  //a는 state에 보관했던 자료나옴. 여기선 '남자 코트 추천'
+  //b는 state변경 도와주는 함수
+
+
+  let[liked,plusLiked] = useState([0,0,0]);
+ 
+  //변경해주는 함수 써줘야 재랜더링 잘됨.
+  //this를 사용해서 줄일수 있나 고민..
+  
+
+ /*
+  let [likedNumber,likedSort]=useState([liked0,liked1,liked2]);
+*/
+
+  return (
+    <div className="App">
+     <div className="black-nav">
+      <h4>React Blog</h4>
+     </div>
+     <button onClick={()=>{
+      let titleSort=[...글제목];
+      titleSort=titleSort.sort();
+      changeTitle(titleSort)
+
+     }}>가나다순 정렬</button>
+
+     <button onClick={()=>{
+      let copy =[...글제목];
+      copy[0]='여자 코트 추천';
+      changeTitle(copy);
+      }}> 글 수정</button>
+
+      <button onClick={()=>{
+       /* let copy=[...글제목];
+        for(let i=0;i<3;i++){
+          if(likedNumber[i]>likedNumber[i+1]){
+            const box= copy[i];
+            copy[i]=copy[i+1];
+            copy[i+1]=box;
+          }
+          
+        };
+        changeTitle(copy);
+        */
+
+        let copyNumber=[...liked];
+        copyNumber=copyNumber.sort();
+        plusLiked(copyNumber);
+
+
+      }}>좋아요 정렬</button>
+
+     <div className ="list">
+      <h4>{글제목[0]} <span onClick={()=>plusLiked(liked[0]+1)}>👍</span>{liked[0]}</h4>
+      <p>2월 1일 발행</p>
+     </div>
+
+     <div className ="list">
+      <h4>{글제목[1]}<span onClick={()=>plusLiked(liked[1]+1)}>👍</span>{liked[1]}</h4>
+      <p>2월 2일 발행</p>
+     </div>
+     <div className ="list">
+      <h4>{글제목[2]}<span onClick={()=>plusLiked(liked[2]+1)}>👍</span>{liked[2]}</h4>
+      <p>2월 3일 발행</p>
+     </div>
+     
+     <Modal></Modal>
+     
+
+    </div>
+  );
+}
+
+function Modal(){
+  return(
+    <div className="modal">
+      <h4>제목</h4>
+      <p>날짜</p>
+      <p>상세 내용</p>
+     </div>
+
+  )
+}
+
+
+export default App;
