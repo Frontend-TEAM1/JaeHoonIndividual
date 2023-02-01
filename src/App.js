@@ -1,35 +1,14 @@
-import React from 'react';
-import './css/App.css';
-import Section1 from './component/Section1';
-import Header from './component/Header';
-import Footer from './component/Footer';
-import Section2 from './component/Section2';
-import Section3 from './component/Section3';
-import Section4 from './component/Section4';
-import Section5 from './component/Section5';
-import Section6 from './component/Section6';
-import Section7 from './component/Section7';
-import Section8 from './component/Section8';
-import Section9 from './component/Section9';
-
+import Moive from "./components/Movie";
+import { dummy } from "./moiveDummy";
+import {BrowserRouter,Routes,Route,RouteProvider} from 'react-router-dom';
+import HomePage from './Home'
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-      <Section1></Section1>
-      <Section2></Section2>
-      <Section3></Section3>
-      <Section4></Section4>
-      <Section5></Section5>
-      <Section6></Section6>
-      <Section7></Section7>
-      <Section8></Section8>
-      <Section9></Section9>
-      <Footer></Footer>
-      
-
-      
-    </div>
+   <BrowserRouter>
+   <Routes>
+    <Route path="/" element={<HomePage/>}/>
+   </Routes>
+   </BrowserRouter>
   );
 }
 
