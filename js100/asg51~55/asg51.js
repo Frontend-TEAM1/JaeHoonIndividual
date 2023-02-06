@@ -1,6 +1,7 @@
 function mergeSort(arr){
     if (arr.length <= 1){
       return arr;
+        
     }
   
     //분할 과정
