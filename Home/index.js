@@ -26,7 +26,6 @@ function HomePage() {
     )
   );
   /*
-
   교차(intersection)를 관찰하고, 이 교차가 일어날 때 콜백함수를 실행합니다.
   threshold 옵션을 1로 설정-> 요소가 뷰포트와 100% 교차할 때 콜백함수를 실행
   */
