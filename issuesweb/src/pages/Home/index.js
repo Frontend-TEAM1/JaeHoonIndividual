@@ -25,7 +25,7 @@ function HomePage() {
       <h1>Angular CLI Issues</h1>
       <ul>
         {issues.map((issue) => (
-          <li key={issue.id}>{issue.id}</li>
+          <List issue={issue} />
         ))}
       </ul>
     </div>
