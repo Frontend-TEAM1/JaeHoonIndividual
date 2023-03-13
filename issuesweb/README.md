@@ -15,6 +15,9 @@
 ### List Page Requirements
 
 - https://github.com/angular/angular-cli를 활용
+  -> POWERSHELL 관리자 권한으로 실행 후
+  Set-ExecutionPolicy RemoteSigned
+  Set-ExecutionPolicy Bypass -Scope Process
 - 이슈 목록은 10개 단위의 페이지네이션으로 구현할 것
 - 총 이슈의 갯수는 최근 200개로 한정 ( total item: 200 )
 - api에서 구할 수 없는 데이터이므로 임의로 정할 것
