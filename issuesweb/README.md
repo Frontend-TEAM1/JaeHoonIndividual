@@ -4,69 +4,43 @@
 특정 레퍼지토리의 이슈를
 조회할 수 있는 반응형 웹 사이트를 만들 것
 
-## Available Scripts
+## Project Check List
 
-In the project directory, you can run:
+- 본인이 잘 모르는 오픈 api라 할 지라도 사용할 수 있는가?
+- 페이지네이션 기능을 구현할 수 있는가?
+- 필터 기능 구현을 효율적으로 할 수 있는가?
+- 리엑트로 반응형 웹 사이트를 만들 수 있는가?
+- rtk 사용법을 익히고 있는가?
 
-### `npm start`
+### List Page Requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- https://github.com/angular/angular-cli를 활용
+- 이슈 목록은 10개 단위의 페이지네이션으로 구현할 것
+- 총 이슈의 갯수는 최근 200개로 한정 ( total item: 200 )
+- api에서 구할 수 없는 데이터이므로 임의로 정할 것
+- 만약 총 이슈의 갯수가 200개가 안된다고 하더라도 빈 페이지가 보이도록 구현
+- 현재 페이지의 숫자는 포커스 되어있어야 할것
+- 10페이지 단위로 마지막 페이지에서 다음 페이지를 누르면 다음 10 페이지가 뜨도록
+- 버튼은 [맨처음] [이전] 1, [2], 3, 4, 5 [다음] [맨끝]으로 구현할 것
+- 필터 기능 구현 생성순/업데이트순/댓글순
+- 목록은 RTK를 활용하여 전역 상태 관리 할 것
+- 모바일 및 태블릿 화면으로 봐도 UX에 불편함이 없어야 함
+- 데이터가 받아오는 동안 리스트 화면은 로딩 페이지를 띄워야함
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Detail Page Requirements
 
-### `npm test`
+- 이슈의 id 값을 활용하여 api를 요청하고 해당 issue의 상세페이지를 구현할 것
+- 모바일 및 태블릿 화면으로 봐도 UX에 불편함이 없어야 함
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Common Requirements
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 각 기능 마다 브랜치를 파서 merge 할 것
+- README.md에 아래와 같은 사항을 추가할 것
+  - 프로젝트 설명
+  - 배포 주소 or 시연 영상
+  - 프로젝트 폴더 구조
+  - 팀원
+  - 사용 기술 스택
+  - 요구 사항 구현 내역
+  - 코드 및 깃허브 커밋 컨벤션
+- 구현 후 serverless 환경에서 배포하기
