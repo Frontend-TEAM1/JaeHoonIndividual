@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# GOAL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+깃허브 오픈 API를 활용하여
+특정 레퍼지토리의 이슈를
+조회할 수 있는 반응형 웹 사이트를 만들 것
 
 ## Available Scripts
 
