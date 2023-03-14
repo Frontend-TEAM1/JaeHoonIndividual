@@ -1,0 +1,168 @@
+이슈 데이터 정리
+
+{status: 200, url: 'https://api.github.com/repos/angular/angular-cli/issues?owner=owner&repo=%20repo&per_page=10&page=1', headers: {…}, data: Array(10)}
+data
+: 
+(10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+headers
+: 
+{cache-control: 'public, max-age=60, s-maxage=60', content-type: 'application/json; charset=utf-8', etag: 'W/"0956499d4bc9d553eb0c0712882a8c38b1db440c02491f55988e0464edc4a56e"', link: '<https://api.github.com/repositories/36891867/issu…owner&repo=+repo&per_page=10&page=22>; rel="last"', x-github-media-type: 'github.v3; format=json', …}
+status
+: 
+200
+url
+: 
+"https://api.github.com/repos/angular/angular-cli/issues?owner=owner&repo=%20repo&per_page=10&page=1"
+
+data : Array(10)
+
+>>>>>>>>>>>>>>>>가져와야할 데이터 정리<<<<<<<<<<<<<<
+
+1) 목록 화면 
+
+번호 : number(#붙여서 띄워주기) 
+작성 날짜 : created_at  ( updated_at (수정 날짜) 와 다름)
+댓글 갯수: comments
+제목: title
+본문 내용 : body (본문 내용 글자수 제한으로 끊어야함)
+
+2) 상세 페이지 화면
+
+
+번호 : number(#붙여서 띄워주기) 
+작성 날짜 : created_at  * updated_at (수정 날짜) 와 다름
+유저 아이콘 :  user.avatar_url
+유저의 이름: user.login 
+제목: title
+본문 내용 : body
+
+--------------------------------------------------------------------------------------------------------------
+
+url: 이슈 URL
+repository_url: 이슈가 속한 레포지토리 URL
+labels_url: 이슈의 라벨 URL
+comments_url: 이슈의 댓글 URL
+events_url: 이슈 이벤트 URL
+html_url: 이슈 웹 페이지 URL
+id: 이슈 고유 ID
+node_id: 이슈 노드 ID
+number: 이슈 번호
+title: 이슈 제목
+user: 이슈 작성자 정보
+labels: 이슈 라벨 목록
+state: 이슈 상태 ("open" 또는 "closed")
+assignee: 이슈 담당자 정보
+assignees: 이슈 담당자 목록
+milestone: 이슈 마일스톤 정보
+comments: 이슈 댓글 개수
+created_at: 이슈 생성 일시
+updated_at: 이슈 수정 일시
+closed_at: 이슈 닫힘 일시
+author_association: 이슈 작성자와의 관계
+active_lock_reason: 이슈 잠금 사유
+body: 이슈 본문
+performed_via_github_app: 이슈 생성에 사용된 GitHub 앱 정보
+locked: 이슈 잠김 여부
+state_reason: 이슈 상태 변경 사유
+pull_request: 이슈와 연결된 pull request 정보
+draft: 이슈가 draft 상태인지 여부
+timeline_url: 이슈 타임라인 URL
+reactions: 이슈 반응 정보
+
+>>> 0번째 데이터 // 
+0
+: 
+active_lock_reason
+: 
+null
+assignee
+: 
+null
+assignees
+: 
+[]
+author_association
+: 
+"CONTRIBUTOR"
+body
+: 
+"## PR Checklist\r\n\r\nPlease check to confirm your PR fulfills the following requirements:\r\n\r\n<!-- Please check all that apply using \"x\". -->\r\n\r\n- [x] The commit message follows our guidelines: https://github.com/angular/angular-cli/blob/main/CONTRIBUTING.md#-commit-message-guidelines\r\n- [x] Tests for the changes have been added (for bug fixes / features)\r\n- [x] Docs have been added / updated (for bug fixes / features)\r\n\r\n## PR Type\r\n\r\nWhat kind of change does this PR introduce?\r\n\r\n<!-- Please check the one that applies to this PR using \"x\". -->\r\n\r\n- [ ] Bugfix\r\n- [x] Feature\r\n- [ ] Code style update (formatting, local variables)\r\n- [ ] Refactoring (no functional changes, no api changes)\r\n- [ ] Build related changes\r\n- [ ] CI related changes\r\n- [ ] Documentation content changes\r\n- [ ] Other... Please describe:\r\n\r\n## What is the current behavior?\r\n\r\n<!-- Please describe the current behavior that you are modifying, or link to a relevant issue. -->\r\n\r\nThe ability to create an application without the use of NgModules does not exist.\r\n\r\nIssue Number: #23976 \r\n\r\n## What is the new behavior?\r\n\r\n<!-- Please describe the new behavior that. -->\r\n\r\nThe flag `--standalone` is added to both the `ng new` command as well as `ng generate application` schematic.\r\n\r\n## Does this PR introduce a breaking change?\r\n\r\n- [ ] Yes\r\n- [x] No\r\n\r\n<!-- If this PR contains a breaking change, please describe the impact and migration path for existing applications below. -->\r\n\r\n## Other information\r\n"
+closed_at
+: 
+null
+comments
+: 
+0
+comments_url
+: 
+"https://api.github.com/repos/angular/angular-cli/issues/24848/comments"
+created_at
+: 
+"2023-03-13T13:50:16Z"
+draft
+: 
+true
+events_url
+: 
+"https://api.github.com/repos/angular/angular-cli/issues/24848/events"
+html_url
+: 
+"https://github.com/angular/angular-cli/pull/24848"
+id
+: 
+1621530522
+labels
+: 
+[{…}]
+labels_url
+: 
+"https://api.github.com/repos/angular/angular-cli/issues/24848/labels{/name}"
+locked
+: 
+false
+milestone
+: 
+null
+node_id
+: 
+"PR_kwDOAjLs285L5XUN"
+number
+: 
+24848
+performed_via_github_app
+: 
+null
+pull_request
+: 
+{url: 'https://api.github.com/repos/angular/angular-cli/pulls/24848', html_url: 'https://github.com/angular/angular-cli/pull/24848', diff_url: 'https://github.com/angular/angular-cli/pull/24848.diff', patch_url: 'https://github.com/angular/angular-cli/pull/24848.patch', merged_at: null}
+reactions
+: 
+{url: 'https://api.github.com/repos/angular/angular-cli/issues/24848/reactions', total_count: 0, +1: 0, -1: 0, laugh: 0, …}
+repository_url
+: 
+"https://api.github.com/repos/angular/angular-cli"
+state
+: 
+"open"
+state_reason
+: 
+null
+timeline_url
+: 
+"https://api.github.com/repos/angular/angular-cli/issues/24848/timeline"
+title
+: 
+"feat(@schematics/angular): Implement a standalone flag for new applications"
+updated_at
+: 
+"2023-03-14T13:36:42Z"
+url
+: 
+"https://api.github.com/repos/angular/angular-cli/issues/24848"
+user
+: 
+{login: 'Brocco', id: 1565117, node_id: 'MDQ6VXNlcjE1NjUxMTc=', avatar_url: 'https://avatars.githubusercontent.com/u/1565117?v=4', gravatar_id: '', …}
+[[Prototype]]
+: 
+Object
+
