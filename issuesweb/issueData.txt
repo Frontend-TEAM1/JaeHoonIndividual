@@ -24,13 +24,13 @@ data : Array(10)
 작성 날짜 : created_at  ( updated_at (수정 날짜) 와 다름)
 댓글 갯수: comments
 제목: title
-본문 내용 : body (본문 내용 글자수 제한으로 끊어야함)
-
+본문 내용 : body (본문 내용 끊어야함)
+유저의 이름: user.login 
 2) 상세 페이지 화면
 
 
 번호 : number(#붙여서 띄워주기) 
-작성 날짜 : created_at  * updated_at (수정 날짜) 와 다름
+작성 날짜 : created_at  
 유저 아이콘 :  user.avatar_url
 유저의 이름: user.login 
 제목: title
