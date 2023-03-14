@@ -7,12 +7,12 @@ function List({ issue }) {
       <S.FirstLine>
         <div>#{issue.number}</div>
         <div>{issue.title}</div>
-        <div>Comments{issue.comments}</div>
+        <div>Comments {issue.comments}</div>
       </S.FirstLine>
       <S.Body>{issue.body}</S.Body>
       <S.LastLine>
-        {issue.user.login}
-        {issue.created_at}
+        <div>{issue.user.login}</div>
+        <div>{issue.created_at}</div>
       </S.LastLine>
     </S.Wrapper>
   );
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   margin: 5vh 5vh;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 3px solid black;
   ${flexCenter}
 `;
 
@@ -38,6 +38,7 @@ const FirstLine = styled.div`
 const Body = styled.div`
   border: 2px solid salmon;
   height: 15vh;
+  width: 100%;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -51,6 +52,10 @@ const LastLine = styled.div`
   display: flex;
   justify-content: flex-end;
   border: 2px solid deeppink;
+  & > div {
+    // border: 2px solid royalblue;
+    padding-left: 1vw;
+  }
 `;
 
 const S = {
