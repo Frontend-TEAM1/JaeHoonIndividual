@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
-function PageNation({ currentPage, totalPages, onPageChange }) {
+function PageNation({
+  currentPage,
+  totalPages,
+  onPageChange,
+  firstVisiblePage,
+  lastVisiblePage,
+}) {
   const pageNumbers = [];
-
-  for (let i = 1; i <= totalPages; i++) {
+  for (let i = firstVisiblePage; i <= lastVisiblePage; i++) {
     pageNumbers.push(i);
   }
   const prevGroupLastPage = Math.floor((currentPage - 1) / 10) * 10;
@@ -11,6 +16,8 @@ function PageNation({ currentPage, totalPages, onPageChange }) {
   const nextGroupFirstPage = Math.ceil(currentPage / 10) * 10;
   //현재 페이지가 속한 그룹에서 다음 그룹의 첫 페이지를 의미
 
+  console.log(">>", firstVisiblePage);
+  console.log(">>", lastVisiblePage);
   return (
     <div>
       <button

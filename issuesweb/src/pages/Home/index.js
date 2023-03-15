@@ -36,6 +36,16 @@ function HomePage() {
 
   console.log(totalPages);
 
+  const getVisiblePages = () => {
+    const lastVisiblePage = Math.ceil(currentPage / 10) * 10;
+    const firstVisiblePage = lastVisiblePage - 9;
+
+    return {
+      first: Math.max(firstVisiblePage, 1),
+      last: Math.min(lastVisiblePage, totalPages),
+    };
+  };
+  const { first, last } = getVisiblePages();
   useEffect(() => {
     getIssues(currentPage);
   }, [currentPage]);
@@ -55,6 +65,8 @@ function HomePage() {
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageChange}
+        firstVisiblePage={first}
+        lastVisiblePage={last}
       />
     </div>
   );
