@@ -16,8 +16,8 @@ function PageNation({
   const nextGroupFirstPage = Math.ceil(currentPage / 10) * 10;
   //현재 페이지가 속한 그룹에서 다음 그룹의 첫 페이지를 의미
 
-  console.log(">>", firstVisiblePage);
-  console.log(">>", lastVisiblePage);
+  console.log(">>퍼스트>>라스트", firstVisiblePage, lastVisiblePage);
+  // 1~10 페이지에선 1,10 이고 11~20페이지에선 11,20 이 나옴.
   return (
     <div>
       <button
@@ -32,13 +32,13 @@ function PageNation({
          number가 속한 그룹에서 첫 번째 페이지인지를 판별합니다. 
          예를 들어 number가 11인 경우, (11 - 1) % 10은 0이므로 isFirstPageOfGroup는 true
         */
-        const isLastPageOfGroup = number % 10 === 0 && number !== totalPages;
+        const isLastPageOfGroup = number % 10 === 0;
         /*
         number가 속한 그룹에서 마지막 페이지인지를 판별합니다. 
         예를 들어 number가 10인 경우, 10 % 10은 0이지만 number가 totalPages와 같은 경우에는 마지막 페이지가 아니므로 isLastPageOfGroup는 false
         */
         const isInRange =
-          number >= prevGroupLastPage + 1 && number <= nextGroupFirstPage - 1;
+          number >= prevGroupLastPage + 1 && number <= nextGroupFirstPage;
         /*
           number가 현재 페이지가 속한 그룹의 범위에 속하는지를 판별합니다.
            예를 들어 prevGroupLastPage가 10이고 nextGroupFirstPage가 20인 경우,
